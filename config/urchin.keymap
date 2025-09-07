@@ -88,6 +88,21 @@
             key-positions = <10 19>; // A + ;
             bindings = <&caps_word>; 
         };
+
+        combo_bspc_ctrl_h {
+            timeout-ms = <50>;
+            key-positions = <21>; // Позиция клавиши H
+            bindings = <&kp BSPC>;
+            required-mods = <(MOD_LCTL)>;
+        };
+
+        combo_enter_ctrl_m {
+            timeout-ms = <50>;
+            key-positions = <26>; // Позиция клавиши M
+            bindings = <&kp RETURN>;
+            required-mods = <(MOD_LCTL)>;
+        };
+
     };
 
     keymap {
@@ -99,10 +114,10 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ;       │
-            &kp A      HRML(S,     D,         F,         G)           HRMR(bspch,  J,         K,         L)       &escsem
+            &kp A      HRML(S,     D,         F,         G)           HRMR(H,      J,         K,         L)       &escsem
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &retm      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 LBKT &lt 1 SQT      &lt 3 SPC  &kp RBKT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
