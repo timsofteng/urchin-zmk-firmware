@@ -52,7 +52,7 @@
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
-            then-layer = <3>;
+            then-layer = <4>;
         };
     };
 
@@ -61,13 +61,13 @@
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>; // Q + W
+            key-positions = <0 1>; // W + E
             bindings = <&kp ESC>;
         };
 
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <10 11>; // A + S
+            key-positions = <11 12>; // S + D
             bindings = <&kp TAB>;
         };
 
@@ -79,7 +79,7 @@
 
         combo_bspc {
             timeout-ms = <50>;
-            key-positions = <8 9>; // O + P
+            key-positions = <9 10>; // I + O
             bindings = <&kp BSPC>;
         };
 
@@ -99,12 +99,12 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ;       │
-            &kp A      HRML(S,        D,        F,        G)           HRMR(H,        J,        K,        L)       &escsem
+            &kp A      HRML(S,     D,         F,         G)           HRMR(H,      J,         K,         L)       &escsem
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 LBKT &lt 1 SQT      &lt 3 SPC  &lt 4 RBKT
+                                            &lt 2 LBKT &lt 1 SQT      &lt 3 SPC  &kp RBKT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -115,11 +115,11 @@
         //│          │          │          │          │          │   │  `       │  &       │  *       │  (       │  )       │
             &none      &none      &none      &none      &none          &kp GRAVE  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  \       │  $       │  %       │  ^       │  =       │
-            &none      &none      &none      &none      &none          &kp BSLH   &kp DLLR   &kp PRCNT  &kp CARET  &kp EQUAL
+        //│          │          │          │          │          │   │  +       │  $       │  %       │  ^       │  =       │
+            &none      &trans     &trans     &trans     &trans         &kp PLUS   &kp DLLR   &kp PRCNT  &kp CARET  &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │  !       │  @       │  #       │  _       │
-            &none      &none      &none      &none      &none          &none      &kp EXCL   &kp AT     &kp HASH   &kp MINUS 
+        //│          │          │          │          │          │   │  -       │  !       │  @       │  #       │  \       │
+            &none      &none      &none      &none      &none          &kp MINUS  &kp EXCL   &kp AT     &kp HASH   &kp BSLH 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &none      &none          &trans     &none 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -133,7 +133,7 @@
             &none      &none      &none      &none      &none          &none      &kp N7     &kp N8     &kp N9     &kp N0   
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │  4       │  5       │  6       │          │
-            &none      &none      &none      &none      &none          &none      &kp N4     &kp N5     &kp N6     &none
+            &none      &trans     &trans     &trans     &trans         &none      &kp N4     &kp N5     &kp N6     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │  1       │  2       │  3       │          │
            &none       &none      &none      &none      &none          &none      &kp N1     &kp N2     &kp N3     &none
@@ -162,7 +162,7 @@
 
 
 
-        tri_layer {
+        tri_layer { // 4
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
