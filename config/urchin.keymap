@@ -88,6 +88,17 @@
             key-positions = <10 19>; // A + ;
             bindings = <&caps_word>; 
         };
+        combo_ctrl_h {
+            timeout-ms = <30>;
+            key-positions = <...posCtrl ...posH>; // координаты Ctrl и H
+            bindings = <&kp BSPC>;
+        };
+
+        combo_ctrl_m {
+            timeout-ms = <30>;
+            key-positions = <...posCtrl ...posM>;
+            bindings = <&kp ENTER>;
+        };
     };
 
     keymap {
