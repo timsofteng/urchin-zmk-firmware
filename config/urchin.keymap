@@ -8,7 +8,7 @@
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LALT k1  &ht LSHFT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k2,k3,k4) &ht RCTRL k2  &ht RSHFT k3  &ht RALT k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1 &ht RCTRL k2  &ht RSHFT k3  &ht RALT k4
 
 / {
     behaviors {
@@ -105,7 +105,7 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ;       │
-            &kp A      HRML(S,     D,         F,         G)      &ht RGUI &bspch  HRMR(J,         K,         L)       &escsem
+            &kp A      HRML(S,     D,         F,         G)           HRMR(&bspch, J,         K,         L)       &escsem
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &retm      &kp COMMA  &kp DOT    &kp FSLH
