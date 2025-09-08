@@ -34,12 +34,12 @@
             bindings = <&kp I>, <&kp TAB>;
             mods = <(MOD_LCTL)>;
         };
-        bspch: backspace_h {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp H>, <&kp BSPC>;
-            mods = <(MOD_LCTL)>;
-        };
+        /* bspch: backspace_h { */
+        /*     compatible = "zmk,behavior-mod-morph"; */
+        /*     #binding-cells = <0>; */
+        /*     bindings = <&kp H>, <&kp BSPC>; */
+        /*     mods = <(MOD_LCTL)>; */
+        /* }; */
         escsem: escape_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -88,21 +88,6 @@
             key-positions = <10 19>; // A + ;
             bindings = <&caps_word>; 
         };
-
-        combo_bspc_ctrl_h {
-            timeout-ms = <50>;
-            key-positions = <21>; // Позиция клавиши H
-            bindings = <&kp BSPC>;
-            required-mods = <(MOD_LCTL)>;
-        };
-
-        combo_enter_ctrl_m {
-            timeout-ms = <50>;
-            key-positions = <26>; // Позиция клавиши M
-            bindings = <&kp RETURN>;
-            required-mods = <(MOD_LCTL)>;
-        };
-
     };
 
     keymap {
