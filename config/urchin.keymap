@@ -8,7 +8,7 @@
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LALT k1  &ht LSHFT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RSHFT k3  &ht RALT k4
+#define HRMR(k2,k3,k4) &ht RCTRL k2  &ht RSHFT k3  &ht RALT k4
 
 / {
     behaviors {
@@ -34,12 +34,12 @@
             bindings = <&kp I>, <&kp TAB>;
             mods = <(MOD_LCTL)>;
         };
-        /* bspch: backspace_h { */
-        /*     compatible = "zmk,behavior-mod-morph"; */
-        /*     #binding-cells = <0>; */
-        /*     bindings = <&kp H>, <&kp BSPC>; */
-        /*     mods = <(MOD_LCTL)>; */
-        /* }; */
+        bspch: backspace_h {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp H>, <&kp BSPC>;
+            mods = <(MOD_LCTL)>;
+        };
         escsem: escape_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -89,11 +89,11 @@
             bindings = <&caps_word>; 
         };
 
-		    combo_settings {
-		    	timeout-ms = <200>;
-		    	key-positions = <30 31>;
-		    	bindings = <&mo 4>;
-		    };
+	combo_settings {
+	    timeout-ms = <200>;
+	    key-positions = <30 31>;
+	    bindings = <&mo 4>;
+	};
     };
 
     keymap {
@@ -105,10 +105,10 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ;       │
-            &kp A      HRML(S,     D,         F,         G)           HRMR(H,      J,         K,         L)       &escsem
+            &kp A      HRML(S,     D,         F,         G)      &ht RGUI &bspch  HRMR(J,         K,         L)       &escsem
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &retm      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &lt 2 LBKT &lt 1 SQT      &lt 3 SPC  &kp RBKT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
