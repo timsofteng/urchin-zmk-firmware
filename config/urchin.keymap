@@ -54,13 +54,13 @@
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <0 1>; // W + E
+            key-positions = <1 2>; // W + E
             bindings = <&kp ESC>;
         };
 
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <1 2>; // W + E
+            key-positions = <10 11>; // A + S
             bindings = <&kp TAB>;
         };
 
