@@ -58,12 +58,12 @@
             bindings = <&kp ESC>;
         };
 
-        /* combo_tab { */
-        /*     timeout-ms = <50>; */
-        /*     key-positions = <11 12>; // S + D */
-        /*     bindings = <&kp TAB>; */
-        /* }; */
-        /**/
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <1 2>; // W + E
+            bindings = <&kp TAB>;
+        };
+
         combo_enter {
             timeout-ms = <350>;
             key-positions = <18 19>; // L + ;
