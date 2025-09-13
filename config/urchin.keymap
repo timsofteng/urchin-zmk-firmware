@@ -7,19 +7,21 @@
 
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LALT k1  &ht LSHFT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1 &ht RCTRL k2  &ht RSHFT k3  &ht RALT k4
+#define HRML(k1,k2,k3,k4) &hrm LALT k1  &hrm LSHFT k2  &hrm LCTRL k3  &hrm LGUI k4
+#define HRMR(k1,k2,k3,k4) &hrm RGUI k1 &hrm RCTRL k2  &hrm RSHFT k3  &hrm RALT k4
 
 / {
     behaviors {
-        ht: hold_tap {
+        hrm: home_row_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <11 12 13 14 15 16 17 18>;
+            hold-trigger-on-release;
         };
 
         retm: return_m {
